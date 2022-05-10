@@ -1,0 +1,14 @@
+
+<div class="container col-12 row mx-auto" *ngIf="apiResult">
+  <div class="card-group col-3 mb-3 mt-3" *ngFor="let account of apiResult['hydra:member']">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{account.nickname}}</h5>
+        <p class="card-text">{{account.name}}</p>
+      </div>
+      <div class="card-footer bg-info">
+        <small class="text-muted fw-bold">{{account.email}} </small>
+      </div>
+    </div>
+  </div>
+</div>

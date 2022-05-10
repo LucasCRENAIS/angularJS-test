@@ -8,5 +8,4 @@ export interface IApiResult<T> {
     'hydra:next': string|undefined;
     'hydra:previous': string|undefined;
   }
-
 }

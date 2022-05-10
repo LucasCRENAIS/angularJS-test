@@ -1,1 +1,15 @@
-<p>game-index works!</p>
+
+<div class="container col-12 row mx-auto" *ngIf="apiResult">
+  <div class="card-group col-3 mb-3 mt-3" *ngFor="let game of apiResult['hydra:member']">
+    <div class="card">
+      <img class="card-img-top img-fluid h-100" src="{{game.thumbnailCover}}">
+      <div class="card-body">
+        <h5 class="card-title">{{game.name}}</h5>
+        <p class="card-text"></p>
+      </div>
+      <div class="card-footer bg-warning position-absolute" style="bottom: 0; right: 0">
+        <small class="text-muted fw-bold">{{game.price}} € </small>
+      </div>
+    </div>
+  </div>
+</div>

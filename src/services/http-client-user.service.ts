@@ -2,18 +2,18 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {IApiResult} from "../models/steamish/i-api-result";
-import {Game} from "../models/steamish/game";
+import {User} from "../models/steamish/user";
 
 @Injectable({
   providedIn: 'root'
 })
-export class HttpClientGameService {
+export class HttpClientGameAccountsService {
 
   urlApi: string = 'https://steam-ish.test-02.drosalys.net';
 
   constructor(private httpClient: HttpClient) { }
 
-  getGames(urlGamesPaginated: string = '/api/games?page=1'): Observable<IApiResult<Game>> {
-    return this.httpClient.get<IApiResult<Game>>(this.urlApi + urlGamesPaginated);
+  getUsers(urlUsersPaginated: string = '/api/accounts?page=1'): Observable<IApiResult<User>> {
+    return this.httpClient.get<IApiResult<User>>(this.urlApi + urlUsersPaginated);
   }
 }
