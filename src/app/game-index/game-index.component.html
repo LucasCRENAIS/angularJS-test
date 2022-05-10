@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 <div class="container col-12 row mx-auto" *ngIf="apiResult">
   <div class="card-group col-3 mb-3 mt-3" *ngFor="let game of apiResult['hydra:member']">
     <div class="card">
@@ -10,20 +9,6 @@
       </div>
       <div class="card-footer bg-warning position-absolute" style="bottom: 0; right: 0">
         <small class="text-muted fw-bold">{{game.price}} € </small>
-=======
-
-<div class="container" *ngIf="apiResult">
-  <div class="d-flex justify-content-between mt-3">
-    <button class="btn btn-success">First</button>
-    <button class="btn btn-primary">Previous</button>
-    <button class="btn btn-warning">Next</button>
-    <button class="btn btn-danger">Last</button>
-  </div>
-  <div class="row">
-    <div class="col-lg-3 col-md-6" *ngFor="let game of apiResult['hydra:member']">
-      <div class="p-3 w-100 h-100">
-        <img [src]="game.thumbnailCover" class="img-fluid">
->>>>>>> 1720d4e4d71f3ac5ade061d17e1939d896836b1c
       </div>
     </div>
   </div>

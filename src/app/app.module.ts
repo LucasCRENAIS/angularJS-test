@@ -7,13 +7,15 @@ import { ChessGameComponent } from './chess-game/chess-game.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {HttpClientModule} from "@angular/common/http";
 import { GameIndexComponent } from './game-index/game-index.component';
+import {GameAccountsComponent} from "./game-accounts/game-accounts.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     ChessGameComponent,
     NavbarComponent,
-    GameIndexComponent
+    GameIndexComponent,
+    GameAccountsComponent
   ],
   imports: [
     BrowserModule,
