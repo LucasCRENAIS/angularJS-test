@@ -1,4 +1,9 @@
-
+<div class="card-header d-flex justify-content-between mb-3" *ngIf="apiResult">
+  <button class="btn btn-success" (click)="updateAccountPage(apiResult['hydra:view']['hydra:first'])">First</button>
+  <button class="btn btn-primary" (click)="updateAccountPage(apiResult['hydra:view']['hydra:previous'])">Previous</button>
+  <button class="btn btn-warning" (click)="updateAccountPage(apiResult['hydra:view']['hydra:next'])">Next</button>
+  <button class="btn btn-danger" (click)="updateAccountPage(apiResult['hydra:view']['hydra:last'])">Last</button>
+</div>
 <div class="container col-12 row mx-auto" *ngIf="apiResult">
   <div class="card-group col-3 mb-3 mt-3" *ngFor="let account of apiResult['hydra:member']">
     <div class="card">
@@ -6,8 +11,8 @@
         <h5 class="card-title">{{account.nickname}}</h5>
         <p class="card-text">{{account.name}}</p>
       </div>
-      <div class="card-footer bg-info">
-        <small class="text-muted fw-bold">{{account.email}} </small>
+      <div class="card-footer" [ngStyle]="{'background-color': getRandomLightColor()}">
+        <small class="text-black fw-bold">{{account.email}} </small>
       </div>
     </div>
   </div>
