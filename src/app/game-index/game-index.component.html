@@ -1,10 +1,18 @@
-<div class="card-header d-flex mb-3" *ngIf="apiResult">
-  <button class="btn btn-success" (click)="updateGamePage(apiResult['hydra:view']['hydra:first'])">First</button>
-  <button class="btn btn-primary" (click)="updateGamePage(apiResult['hydra:view']['hydra:previous'])">Previous</button>
-  <button class="btn btn-warning" (click)="updateGamePage(apiResult['hydra:view']['hydra:next'])">Next</button>
-  <button class="btn btn-danger" (click)="updateGamePage(apiResult['hydra:view']['hydra:last'])">Last</button>
-</div>
-<div class="container col-12 row mx-auto" *ngIf="apiResult">
+
+<div class="container col-12 row mx-auto" *ngIf="apiResult; else loadingData">
+  <div class="header d-flex mb-3 mt-3 justify-content-between">
+    <button class="btn btn-success" (click)="updateGamePage(apiResult['hydra:view']['hydra:first'])"
+            [disabled]="!apiResult['hydra:view']['hydra:first']">First</button>
+
+    <button class="btn btn-primary" (click)="updateGamePage(apiResult['hydra:view']['hydra:previous'])"
+            [disabled]="!apiResult['hydra:view']['hydra:previous']">Previous</button>
+
+    <button class="btn btn-warning" (click)="updateGamePage(apiResult['hydra:view']['hydra:next'])"
+            [disabled]="!apiResult['hydra:view']['hydra:next']">Next</button>
+
+    <button class="btn btn-danger" (click)="updateGamePage(apiResult['hydra:view']['hydra:last'])"
+            [disabled]="apiResult['hydra:view']['hydra:last']">Last</button>
+  </div>
   <div class="card-group col-3 mb-3 mt-3" *ngFor="let game of apiResult['hydra:member']">
     <div class="card">
       <img class="card-img-top img-fluid h-100" src="{{game.thumbnailCover}}">

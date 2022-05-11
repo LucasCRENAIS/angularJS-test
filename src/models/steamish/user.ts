@@ -1,6 +1,7 @@
 
 export class User {
 
+  private _id: number = 0;
   private _name: string = '';
   private _email: string = '';
   private _nickname: string = '';
@@ -9,6 +10,14 @@ export class User {
 
   constructor() {
     this._libraries= [];
+  }
+
+  get id(): number {
+    return this._id;
+  }
+
+  set id(value: number) {
+    this._id = value;
   }
 
   get name(): string {

@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {HttpClientModule} from "@angular/common/http";
 import { GameIndexComponent } from './game-index/game-index.component';
 import {GameAccountsComponent} from "./game-accounts/game-accounts.component";
+import { AccountShowComponent } from './account-show/account-show.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {GameAccountsComponent} from "./game-accounts/game-accounts.component";
     ChessGameComponent,
     NavbarComponent,
     GameIndexComponent,
-    GameAccountsComponent
+    GameAccountsComponent,
+    AccountShowComponent
   ],
   imports: [
     BrowserModule,

@@ -15,5 +15,11 @@ export class HttpClientGameAccountsService {
 
   getUsers(urlUsersPaginated: string = '/api/accounts?page=1'): Observable<IApiResult<User>> {
     return this.httpClient.get<IApiResult<User>>(this.urlApi + urlUsersPaginated);
+
+  }
+
+  getOneUser(accountId: string, urlUser: string = '/api/accounts/'+accountId): Observable<User> {
+    return this.httpClient.get<User>(this.urlApi + urlUser);
+
   }
 }
