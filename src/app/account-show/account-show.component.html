@@ -8,14 +8,10 @@
       {{apiResult.email}}
     </div>
   </div>
-  <div class="card-group col-3 mb-3 mt-3" *ngFor="let library of apiLibraryResult['hydra:member']">
+  <div class="card-group col-3 mb-3 mt-3" *ngFor="let library of apiResult.libraries">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">{{library.game}}</h5>
-        <p class="card-text"></p>
-      </div>
-      <div class="card-footer">
-        <small class="text-black fw-bold"></small>
+        <h5 class="card-title">{{library}}</h5>
       </div>
     </div>
   </div>

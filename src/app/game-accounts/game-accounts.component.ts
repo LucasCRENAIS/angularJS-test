@@ -40,6 +40,6 @@ export class GameAccountsComponent implements OnInit {
   }
 
   getRandomLightColor(): string {
-    return "hsl(" + Math.random() * 360 + ", 100%, 75%)";
+      return "hsl(" + Math.random() * 360 + ", 100%, 75%)";
   }
 }

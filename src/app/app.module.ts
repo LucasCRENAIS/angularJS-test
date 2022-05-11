@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { GameIndexComponent } from './game-index/game-index.component';
 import {GameAccountsComponent} from "./game-accounts/game-accounts.component";
 import { AccountShowComponent } from './account-show/account-show.component';
+import { DigimonComponent } from './digimon/digimon.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AccountShowComponent } from './account-show/account-show.component';
     NavbarComponent,
     GameIndexComponent,
     GameAccountsComponent,
-    AccountShowComponent
+    AccountShowComponent,
+    DigimonComponent
   ],
   imports: [
     BrowserModule,
