@@ -1,0 +1,22 @@
+<div class="container col-12 row mx-auto" *ngIf="apiResult && apiLibraryResult">
+  <div class="card text-center p-0 mt-3">
+    <div class="card-body" [ngStyle]="{'background-color': getRandomLightColor()}">
+      <h5 class="card-title">{{apiResult.nickname}}</h5>
+      <p class="card-text"></p>
+    </div>
+    <div class="card-footer text-muted">
+      {{apiResult.email}}
+    </div>
+  </div>
+  <div class="card-group col-3 mb-3 mt-3" *ngFor="let library of apiLibraryResult['hydra:member']">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{library.game}}</h5>
+        <p class="card-text"></p>
+      </div>
+      <div class="card-footer">
+        <small class="text-black fw-bold"></small>
+      </div>
+    </div>
+  </div>
+</div>
