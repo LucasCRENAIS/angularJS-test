@@ -2,7 +2,7 @@
   <div class="card text-center p-0 mt-3">
     <div class="card-body" [ngStyle]="{'background-color': getRandomLightColor()}">
       <h5 class="card-title">{{apiResult.nickname}}</h5>
-      <p class="card-text"></p>
+      <p class="card-text">wallet : {{apiResult.wallet}} €</p>
     </div>
     <div class="card-footer text-muted">
       {{apiResult.email}}
