@@ -11,6 +11,7 @@ import {DigimonService} from "../../services/digimon.service";
 export class DigimonLevelComponent implements OnInit {
 
   digimons: Array<Digimon> = [];
+  levelTitle: string = "";
 
   constructor(
     private httpDigimon: DigimonService,
@@ -21,6 +22,7 @@ export class DigimonLevelComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.httpDigimon.getDigimonsByLevel(params.level).subscribe((jsonDigimon) => {
         this.digimons = jsonDigimon;
+        this.levelTitle = params.level
       })
     });
   }
