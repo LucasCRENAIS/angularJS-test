@@ -24,7 +24,7 @@ export class GameAccountsComponent implements OnInit {
     });
   }
 
-  updateAccountPage(endUrl: string = '/api/accounts?page=1'): void {
+  updateResult(endUrl: string = '/api/accounts?page=1'): void {
     this.gameAccountsService.getUsers(endUrl)
       .pipe(
         catchError(err => {

@@ -1,19 +1,12 @@
 <div class="container col-12 row mx-auto" *ngIf="apiResult; else loadingData">
-  <div class="header d-flex mb-3 mt-3 justify-content-between">
-    <button class="btn btn-success" (click)="updateAccountPage(apiResult['hydra:view']['hydra:first'])"
-    [disabled]="!apiResult['hydra:view']['hydra:first']">First</button>
-
-    <button class="btn btn-primary" (click)="updateAccountPage(apiResult['hydra:view']['hydra:previous'])"
-    [disabled]="!apiResult['hydra:view']['hydra:previous']">Previous</button>
-
-    <button class="btn btn-warning" (click)="updateAccountPage(apiResult['hydra:view']['hydra:next'])"
-    [disabled]="!apiResult['hydra:view']['hydra:next']">Next</button>
-
-    <button class="btn btn-danger" (click)="updateAccountPage(apiResult['hydra:view']['hydra:last'])"
-    [disabled]="!apiResult['hydra:view']['hydra:last']">Last</button>
-  </div>
-</div>
-<div class="container col-12 row mx-auto" *ngIf="apiResult">
+  <!-- paginator est un component fille de account-index (mère) -->
+  <!-- eventEmitterUrlClicked => Output depuis la fille -->
+  <!-- on doit passer l'information à une fonction de la classe mère -->
+  <!-- qui prend un paramètre du même type déclaré dans l'EventEmitter de la fille -->
+  <!-- ici : string ($event sera donc de type string) -->
+  <app-paginator  [hydraView]="apiResult['hydra:view']"
+                  (eventEmitterUrlClicked)="updateResult($event)"
+  ></app-paginator>
   <div class="card-group col-3 mb-3 mt-3" *ngFor="let account of apiResult['hydra:member']">
     <div class="card" routerLink="/game/accounts/{{account.id}}" style="cursor: pointer">
       <div class="card-body">

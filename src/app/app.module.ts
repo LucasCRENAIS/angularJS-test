@@ -10,6 +10,7 @@ import { GameIndexComponent } from './game-index/game-index.component';
 import {GameAccountsComponent} from "./game-accounts/game-accounts.component";
 import { AccountShowComponent } from './account-show/account-show.component';
 import { DigimonComponent } from './digimon/digimon.component';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DigimonComponent } from './digimon/digimon.component';
     GameIndexComponent,
     GameAccountsComponent,
     AccountShowComponent,
-    DigimonComponent
+    DigimonComponent,
+    PaginatorComponent
   ],
   imports: [
     BrowserModule,

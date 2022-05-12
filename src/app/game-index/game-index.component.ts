@@ -17,10 +17,10 @@ export class GameIndexComponent implements OnInit {
   constructor(private gameService: HttpClientGameService) { }
 
   ngOnInit(): void {
-    this.updateGamePage();
+    this.updateResult();
   }
 
-  updateGamePage(endUrl: string = '/api/games?page=1'): void {
+  updateResult(endUrl: string = '/api/games?page=1'): void {
     this.gameService.getGames(endUrl)
       .pipe(
         catchError(err => {
