@@ -1,23 +1,24 @@
-<div class="container col-12 row mx-auto" *ngIf="apiResult">
-  <div class="card-group col-3 mb-3 mt-3" *ngFor="let digimon of apiResult">
-    <div class="card">
+<div class="container col-12 row mx-auto" *ngIf="digimons">
+  <div class="card-group col-3 mb-3 mt-3" *ngFor="let digimon of digimons">
+    <div class="card" routerLink="/digimon/{{digimon.level}}" style="cursor: pointer">
       <div class="card-body">
         <h5 class="card-title">{{digimon.name}}</h5>
         <div class="card-img">
           <img class="img-fluid h-100" src="{{digimon.img}}">
         </div>
       </div>
-      <div routerLink="/digimon/{{digimon.level}}" style="cursor: pointer"
-        class="card-footer
+      <div class="card-footer
         {{digimon.level == 'Rookie' ? 'bg-info' :
         digimon.level == 'Ultimate' ? 'bg-danger' :
         digimon.level.includes('Training') ? 'bg-secondary' :
         digimon.level == 'Fresh' ? 'bg-success' :
         digimon.level == 'Mega' ? 'bg-warning' :
         digimon.level == 'Armor' ? 'bg-dark text-light' :
-        digimon.level == 'Champion' ? 'bg-primary' : 'bg-light'}}">
+        digimon.level == 'Champion' ? 'bg-primary' : 'bg-light'}}"
+      >
         <small class="fw-bold">{{digimon.level}}</small>
       </div>
     </div>
   </div>
 </div>
+

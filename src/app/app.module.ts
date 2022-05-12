@@ -11,6 +11,7 @@ import {GameAccountsComponent} from "./game-accounts/game-accounts.component";
 import { AccountShowComponent } from './account-show/account-show.component';
 import { DigimonComponent } from './digimon/digimon.component';
 import { PaginatorComponent } from './paginator/paginator.component';
+import { DigimonLevelComponent } from './digimon-level/digimon-level.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PaginatorComponent } from './paginator/paginator.component';
     GameAccountsComponent,
     AccountShowComponent,
     DigimonComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    DigimonLevelComponent
   ],
   imports: [
     BrowserModule,

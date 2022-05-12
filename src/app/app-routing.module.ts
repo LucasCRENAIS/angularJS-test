@@ -5,6 +5,7 @@ import {GameIndexComponent} from "./game-index/game-index.component";
 import {GameAccountsComponent} from "./game-accounts/game-accounts.component";
 import {AccountShowComponent} from "./account-show/account-show.component";
 import {DigimonComponent} from "./digimon/digimon.component";
+import {DigimonLevelComponent} from "./digimon-level/digimon-level.component";
 
 const routes: Routes = [
   { path: 'chess', component: ChessGameComponent },
@@ -12,7 +13,9 @@ const routes: Routes = [
   { path: 'game', component: GameIndexComponent },
   { path: 'game/accounts', component: GameAccountsComponent },
   { path: 'game/accounts/:accountId', component: AccountShowComponent },
-  { path: 'digimon', component: DigimonComponent }
+  { path: 'digimon', component: DigimonComponent },
+  { path: 'digimon/:level', component: DigimonLevelComponent }
+
 ];
 
 @NgModule({
